@@ -1,9 +1,12 @@
 // var database = firebase.database();
-
+if(document.cookie){
+      location.href = '/home'
+    }
 $(document).ready(function() {
     function disablePrev() { window.history.forward() }
     window.onload = disablePrev();
     window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
+    
  });
  const submit = ()=>{
     let emailId = document.getElementById('email').value

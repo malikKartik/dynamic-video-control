@@ -1,3 +1,6 @@
+if(!document.cookie){     
+      location.href='/login'
+  }
 window.onload=()=>{
   if(!document.cookie){     
       location.href='/login'
