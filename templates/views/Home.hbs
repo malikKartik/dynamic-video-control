@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Youtube video app</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="images/business.png" type="image/x-icon"/>
+    <script src="js/home.js"></script>
+</head>
+
+<body>
+    <h1>Hey this is a home button</h1>
+    <div id="my_video"></div>
+    <button onclick="logout()">Logout</button>
+    <button onclick="logoutall()">Logout everyone</button>
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script type="text/javascript">
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('my_video', {
+        width: 600,
+        height: 400,
+        videoId: 'XYX-IZa3rNs',
+        playerVars: {
+            color: 'white'
+        },
+        events: {
+            onReady: initialize
+        }
+    });
+}
+function initialize(){
+
+    // Update the controls on load
+    updateTimerDisplay();
+    var time_update_interval = updateProgressBar();
+
+    // Clear any old interval.
+    clearInterval(time_update_interval);
+    
+    // Start interval to update elapsed time display and
+    // the elapsed part of the progress bar every second.
+    time_update_interval = setInterval(function () {
+        updateTimerDisplay();
+        updateProgressBar();
+
+    }, 1000)
+    console.log(time_update_interval)
+}
+</script>
+</body>
+</html>
